@@ -1,7 +1,4 @@
-// 1 capturar los ingresos numéricos - var
-// 2 capturo lso/el ingreso de operación - var
-// ruta del DOM del resultado o visor
-// eventos en los botones 1 2
+
 
 const display = document.getElementById('display');
 const botones = document.querySelectorAll('button');
@@ -26,29 +23,20 @@ const isOperation = (content) => {
 }
 
 const realizarOperacion = (content) => {
-  // display.textContent = content;
+  
   console.log(`click! ${content}`);
   
   if( num1 === undefined) {
-    // if(content!== 'AC'){
-    //   num1 = content;
-    // } else {
-    //   display.textContent = 0;
-    // }
+    
     num1 = content;
-    //console.log({trim: num1.substring(0,7)});
+   
     display.textContent = num1;
     
     console.log({num1});
     return;
   } else if (
     !isOperation(content) &&
-    // content !=='+' &&
-    // content !== '-' &&
-    // content !== '*' &&
-    // content !== '/' &&
-    // content !== 'sin' &&
-    // content !== 'AC' &&
+   
     !operacion
     ) {
       num1 += content; 
@@ -64,9 +52,7 @@ const realizarOperacion = (content) => {
       operacion = undefined;
       console.log(num1, num2, operacion);
       return;
-    //} else if (content === 'sin') {
-    //   const sin = display.textContent = operacionesS.sin(num1);
-    //   return;
+    
     } else if(operacion === undefined && isOperation(content)) {
       operacion = content;
       display.textContent = num1 + operacion;
@@ -92,23 +78,6 @@ const realizarOperacion = (content) => {
       console.log(operacion);
     } 
     
-    // } else if (content === '=' && operacion === '+'){
-    //   console.log('uiii')
-    //   display.textContent = operacionesS.suma(num1, num2);
-    //   // display.textContent = (Number(num1 )+ Number(num2));
-    // } else if (content === '=' && operacion === '-'){
-    //   console.log('uiii')
-    //   display.textContent = operacionesS.resta(num1, num2);
-    //   // display.textContent = (Number(num1 )+ Number(num2));
-    // }  else if (content === '=' && operacion === '*'){
-    //   console.log('uiii')
-    //   display.textContent = operacionesS.multiplicacion(num1, num2);
-    //   // display.textContent = (Number(num1 )+ Number(num2));
-    // }  else if (content === '=' && operacion === '-'){
-    //   console.log('uiii')
-    //   display.textContent = operacionesS.division(num1, num2);
-    //   // display.textContent = (Number(num1 )+ Number(num2));
-    // }
     
   };
   let num1, num2, operacion;
@@ -119,23 +88,7 @@ const realizarOperacion = (content) => {
     botones[i].addEventListener('click', () => realizarOperacion(content));
   }
 
-// console.log(botones);
 
-
-
-// const button1 = document.getElementById('n1'); 
-// button1.addEventListener('click', () => {
-//     display.textContent = button1.innerHTML;
-//     console.log(`click! ${button1.innerHTML}`);
-// });
-
-// let operacion = document.querySelector('#suma').innerHTML;
-
-// console.log(numero1 operacion numero2);
-// const suma = (sum1, sum2) => {
-//     return sum1 + sum2;
-// }
-// console.log(suma);
 
 const operaciones = (op, num1, num2) => {
  
@@ -144,6 +97,4 @@ const operaciones = (op, num1, num2) => {
     }
 }
 
-// display.textContent = operaciones(operacion, numero1, numero2);
 
-// console.log(operaciones(operacion , numero1, numero2));
